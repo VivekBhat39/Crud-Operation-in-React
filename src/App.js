@@ -1,13 +1,21 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Create from './Component/Create';
+import { Read } from './Component/Read';
+import Update from './Component/Update';
 
 function App() {
   return (
-    <div className="App">
-      <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-        <button type="button" className="btn btn-danger">Left</button>
-        <button type="button" className="btn btn-warning">Middle</button>
-        <button type="button" className="btn btn-success">Right</button>
-      </div>
+    <div className="container">
+      <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Create />}/>
+        <Route exact path="/:id" element={<Create />}/>
+        <Route path="/read" element={<Read />}/>
+        <Route path="/crud/:id" element={<Read />}/>
+        <Route path="/update" element={<Update />}/>
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
