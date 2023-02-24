@@ -60,11 +60,11 @@ export const Read = () => {
                   <td>{eachData.name}</td>
                   <td>{eachData.email}</td>
                   <td>
-                    <Link to={"/" + eachData._id}>
+                    <Link to={"/" + eachData.id}>
                       <button className='btn btn-success'>Edit</button>
                     </Link>
                   </td>
-                  <td><button onClick={() => handleDelete(eachData._id)} className='btn btn-danger'>Delete</button></td>
+                  <td><button onClick={() => handleDelete(eachData.id)} className='btn btn-danger'>Delete</button></td>
                 </tr>
               )
             })
